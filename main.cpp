@@ -1,6 +1,8 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
+#include "Loader.h"
+#include "Model.h"
 
 using namespace std;
 
@@ -25,23 +27,23 @@ int main()
 	glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
 	glDebugMessageCallback((GLDEBUGPROC)callback, nullptr);
 
-	float indices[] = {-1.0f, -1.0f, 0.0f,
-                        1.0f, -1.0f, 0.0f,
-                        0.0f, 1.0f, 0.0f};
+	std::vector<float> vert = {-0.5f, -0.5f, 0.0f,
+                                0.5f, -0.5f, 0.0f,
+                                0.5f, 0.5f, 0.0f,
+                                -0.5f, 0.5f, 0.0f};
+    std::vector<unsigned int> indices = {0, 1, 2, 0, 2, 3};
 
-	unsigned int vbo;
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, false, 3*sizeof(float), nullptr);
+	Model rect = Loader::LoadToVAO(vert, indices);
 
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glBindVertexArray(rect.GetVAO());
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rect.GetEBO());
+
     while(!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
 
         glfwSwapBuffers(window);
         glfwPollEvents();

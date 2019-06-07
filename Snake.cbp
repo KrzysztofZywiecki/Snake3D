@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -35,12 +37,19 @@
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
+			<Add library="glfw3" />
+			<Add library="opengl32" />
+			<Add library="gdi32" />
 			<Add directory="lib-mingw" />
 		</Linker>
 		<Unit filename="glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/Loader.h" />
+		<Unit filename="include/Model.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Loader.cpp" />
+		<Unit filename="src/Model.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
