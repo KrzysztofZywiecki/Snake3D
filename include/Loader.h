@@ -2,7 +2,7 @@
 #define LOADER_H
 #include <list>
 #include <vector>
-#include <glad/glad.h>
+#include "Graphics.h"
 #include "Model.h"
 
 class Loader

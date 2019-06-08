@@ -17,10 +17,9 @@
 	<inttypes.h>
 	<stdint.h>
 
-1559944065 source:c:\users\krzys\desktop\projects\snake\main.cpp
+1559978640 source:c:\users\krzys\desktop\projects\snake\main.cpp
 	<iostream>
-	<glad/glad.h>
-	<glfw/glfw3.h>
+	"Graphics.h"
 	"Loader.h"
 	"Model.h"
 
@@ -687,12 +686,21 @@
 
 1559941937 c:\users\krzys\desktop\projects\snake\include\model.h
 
-1559942605 c:\users\krzys\desktop\projects\snake\include\loader.h
+1559977871 c:\users\krzys\desktop\projects\snake\include\loader.h
 	<list>
 	<vector>
-	<glad/glad.h>
+	"Graphics.h"
 	"Model.h"
 
-1559944302 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
+1559944573 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
 	"Loader.h"
+
+1559978659 c:\users\krzys\desktop\projects\snake\include\graphics.h
+	<iostream>
+	<glad/glad.h>
+	<glfw/glfw3.h>
+	<stdexcept>
+
+1559977917 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
+	"Graphics.h"
 

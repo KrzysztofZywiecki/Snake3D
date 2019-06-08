@@ -45,9 +45,11 @@
 		<Unit filename="glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/Graphics.h" />
 		<Unit filename="include/Loader.h" />
 		<Unit filename="include/Model.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Graphics.cpp" />
 		<Unit filename="src/Loader.cpp" />
 		<Unit filename="src/Model.cpp" />
 		<Extensions>
