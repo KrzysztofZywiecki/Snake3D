@@ -2,6 +2,7 @@
 #include "Graphics.h"
 #include "Loader.h"
 #include "Model.h"
+#include "BasicShader.h"
 
 
 using namespace std;
@@ -23,6 +24,9 @@ int main()
 
     glBindVertexArray(rect.GetVAO());
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, rect.GetEBO());
+
+    BasicShader shader("Shaders/basicVertex.txt", "Shaders/basicFragment.txt");
+    shader.Use();
 
     while(!Graphics::WindowShouldClose())
     {

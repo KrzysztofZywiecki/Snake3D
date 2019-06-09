@@ -33,7 +33,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="glm/glm" />
+			<Add directory="glm" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
@@ -42,16 +42,22 @@
 			<Add library="gdi32" />
 			<Add directory="lib-mingw" />
 		</Linker>
+		<Unit filename="Shaders/basicFragment.txt" />
+		<Unit filename="Shaders/basicVertex.txt" />
 		<Unit filename="glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="include/BasicShader.h" />
 		<Unit filename="include/Graphics.h" />
 		<Unit filename="include/Loader.h" />
 		<Unit filename="include/Model.h" />
+		<Unit filename="include/Shader.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BasicShader.cpp" />
 		<Unit filename="src/Graphics.cpp" />
 		<Unit filename="src/Loader.cpp" />
 		<Unit filename="src/Model.cpp" />
+		<Unit filename="src/Shader.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
