@@ -24,6 +24,11 @@ void Graphics::Init()
     }
 }
 
+glm::mat4 Graphics::GetCamera()
+{
+    return camera;
+}
+
 void Graphics::InitWindow(unsigned int width, unsigned int height, const char* title)
 {
     window = glfwCreateWindow(width, height, title, nullptr, nullptr);
@@ -40,11 +45,11 @@ void Graphics::InitWindow(unsigned int width, unsigned int height, const char* t
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
     const float angle = glm::radians(30.0f);
-    glm::vec3 position = {0.0f, -1.0f, 0.5f};
+    glm::vec3 position = {0.0f, -1.5f, 0.8f};
     glm::vec3 direction = {0.0f, glm::cos(angle), -glm::sin(angle)};
-    glm::vec3 up = {0.0f, sin(angle), cos(angle)};
-    camera = glm::perspective(glm::radians(90.0f), (float)(width)/(float)(height), 0.1f, 10.0f) *
-    glm::lookAt(position, direction, up);
+    glm::vec3 up = {0.0f, glm::sin(angle), glm::cos(angle)};
+	camera = glm::perspective(glm::radians(90.0f), (float)(width) / (float)(height), 0.1f, 10.0f) *
+		glm::lookAt(position, direction, up);
 
 }
 

@@ -1,5 +1,15 @@
 #include "BasicShader.h"
 
+void BasicShader::GetUniforms()
+{
+    cameraLocation = glGetUniformLocation(shaderID, "camera");
+}
+
+void BasicShader::SetCamera()
+{
+    glUniformMatrix4fv(cameraLocation, 1, false, glm::value_ptr(Graphics::GetCamera()));
+}
+
 BasicShader::BasicShader(const char* vertex, const char* fragment)
 {
     unsigned int vert = CompileShader(vertex, GL_VERTEX_SHADER);
@@ -18,4 +28,5 @@ BasicShader::BasicShader(const char* vertex, const char* fragment)
     {
         std::cout<<"Failed to link program "<<vertex<<" + "<<fragment<<std::endl;
     }
+    GetUniforms();
 }

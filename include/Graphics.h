@@ -18,6 +18,7 @@ public:
     static void InitWindow(unsigned int width, unsigned int height, const char* title);
     static bool WindowShouldClose();
     static void UpdateDisplay();
+    static glm::mat4 GetCamera();
 private:
     static glm::mat4 camera;
     static GLFWwindow* window;

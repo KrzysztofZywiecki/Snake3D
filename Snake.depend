@@ -17,7 +17,7 @@
 	<inttypes.h>
 	<stdint.h>
 
-1560070818 source:c:\users\krzys\desktop\projects\snake\main.cpp
+1560180251 source:c:\users\krzys\desktop\projects\snake\main.cpp
 	<iostream>
 	"Graphics.h"
 	"Loader.h"
@@ -696,7 +696,7 @@
 1559944573 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
 	"Loader.h"
 
-1560067375 c:\users\krzys\desktop\projects\snake\include\graphics.h
+1560171589 c:\users\krzys\desktop\projects\snake\include\graphics.h
 	<iostream>
 	<glad/glad.h>
 	<glfw/glfw3.h>
@@ -707,7 +707,7 @@
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 
-1560069477 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
+1560172571 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
 	"Graphics.h"
 
 1559916928 c:\users\krzys\desktop\projects\snake\glm\glm\gtc\type_ptr.hpp
@@ -964,9 +964,9 @@
 	<memory>
 	<fstream>
 
-1560070895 source:c:\users\krzys\desktop\projects\snake\src\basicshader.cpp
+1560171690 source:c:\users\krzys\desktop\projects\snake\src\basicshader.cpp
 	"BasicShader.h"
 
-1560069680 c:\users\krzys\desktop\projects\snake\include\basicshader.h
+1560171618 c:\users\krzys\desktop\projects\snake\include\basicshader.h
 	"Shader.h"
 
