@@ -44,6 +44,9 @@
 		</Linker>
 		<Unit filename="Shaders/basicFragment.txt" />
 		<Unit filename="Shaders/basicVertex.txt" />
+		<Unit filename="Shaders/snakeFragment.txt" />
+		<Unit filename="Shaders/snakeGeometry.txt" />
+		<Unit filename="Shaders/snakeVertex.txt" />
 		<Unit filename="glad.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,12 +55,14 @@
 		<Unit filename="include/Loader.h" />
 		<Unit filename="include/Model.h" />
 		<Unit filename="include/Shader.h" />
+		<Unit filename="include/SnakeShader.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BasicShader.cpp" />
 		<Unit filename="src/Graphics.cpp" />
 		<Unit filename="src/Loader.cpp" />
 		<Unit filename="src/Model.cpp" />
 		<Unit filename="src/Shader.cpp" />
+		<Unit filename="src/SnakeShader.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

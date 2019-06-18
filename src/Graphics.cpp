@@ -44,8 +44,8 @@ void Graphics::InitWindow(unsigned int width, unsigned int height, const char* t
     glDebugMessageCallback((GLDEBUGPROC)(callback), nullptr);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
-    const float angle = glm::radians(30.0f);
-    glm::vec3 position = {0.0f, -1.5f, 0.8f};
+    const float angle = glm::radians(0.0f);
+    glm::vec3 position = {0.0f, -1.8f, 0.9f};
     glm::vec3 direction = {0.0f, glm::cos(angle), -glm::sin(angle)};
     glm::vec3 up = {0.0f, glm::sin(angle), glm::cos(angle)};
 	camera = glm::perspective(glm::radians(90.0f), (float)(width) / (float)(height), 0.1f, 10.0f) *
