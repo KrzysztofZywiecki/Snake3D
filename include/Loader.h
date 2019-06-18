@@ -12,7 +12,6 @@ public:
 
     static unsigned int CreateVAO();
     static unsigned int CreateEBO(std::vector<unsigned int> indices);
-    static Model GenerateGrid(unsigned int x, unsigned int y);
     static void StoreDataInAttributeList(unsigned int attribute, std::vector<float> data);
     static Model LoadToVAO(std::vector<float> positions, std::vector<unsigned int> indices);
     static void UnbindVAO();

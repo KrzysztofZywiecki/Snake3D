@@ -7,46 +7,6 @@ Loader::Loader()
 {
 }
 
-Model Loader::GenerateGrid(unsigned int x, unsigned int y)
-{
-    std::vector<float> vertices;
-    std::vector<unsigned int> indices;
-
-    float width = 2.0f/(float)(x);
-    float height = 2.0f/(float)(y);
-
-    unsigned int counter = 0;
-
-    for(int i=0; i<=x; i++)
-    {
-        vertices.push_back(-1.0f + width * (float)(i));
-        vertices.push_back(-1.0f);
-        vertices.push_back(0.0f);
-        indices.push_back(counter);
-        counter++;
-        vertices.push_back(-1.0f + width * (float)(i));
-        vertices.push_back(1.0f);
-        vertices.push_back(0.0f);
-        indices.push_back(counter);
-        counter++;
-    }
-    for(int i=0; i<=y; i++)
-    {
-        vertices.push_back(-1.0f);
-        vertices.push_back(-1.0f + height*(float)(i));
-        vertices.push_back(0.0f);
-        indices.push_back(counter);
-        counter++;
-        vertices.push_back(1.0f);
-        vertices.push_back(-1.0f + height*(float)(i));
-        vertices.push_back(0.0f);
-        indices.push_back(counter);
-        counter++;
-    }
-
-    return LoadToVAO(vertices, indices);
-}
-
 unsigned int Loader::CreateVAO()
 {
     unsigned int vao;

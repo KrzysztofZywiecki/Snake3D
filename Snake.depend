@@ -17,13 +17,12 @@
 	<inttypes.h>
 	<stdint.h>
 
-1560240418 source:c:\users\krzys\desktop\projects\snake\main.cpp
+1560180251 source:c:\users\krzys\desktop\projects\snake\main.cpp
 	<iostream>
 	"Graphics.h"
 	"Loader.h"
 	"Model.h"
 	"BasicShader.h"
-	"SnakeShader.h"
 
 1559916924 c:\users\krzys\desktop\projects\snake\glm\glm\glm.hpp
 	"detail/_fixes.hpp"
@@ -688,13 +687,13 @@
 
 1559941937 c:\users\krzys\desktop\projects\snake\include\model.h
 
-1560182406 c:\users\krzys\desktop\projects\snake\include\loader.h
+1559977871 c:\users\krzys\desktop\projects\snake\include\loader.h
 	<list>
 	<vector>
 	"Graphics.h"
 	"Model.h"
 
-1560182783 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
+1559944573 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
 	"Loader.h"
 
 1560171589 c:\users\krzys\desktop\projects\snake\include\graphics.h
@@ -708,7 +707,7 @@
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 
-1560181866 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
+1560172571 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
 	"Graphics.h"
 
 1559916928 c:\users\krzys\desktop\projects\snake\glm\glm\gtc\type_ptr.hpp
@@ -970,10 +969,4 @@
 
 1560171618 c:\users\krzys\desktop\projects\snake\include\basicshader.h
 	"Shader.h"
-
-1560185664 source:c:\users\krzys\desktop\projects\snake\src\snakeshader.cpp
-	"SnakeShader.h"
-
-1560185658 c:\users\krzys\desktop\projects\snake\include\snakeshader.h
-	<Shader.h>
 
