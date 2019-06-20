@@ -91,15 +91,15 @@ Model Loader::GenerateGrid(unsigned int x, unsigned int y)
 
 Model Loader::GenerateWireCube(float x, float y, float z)
 {
-    std::vector<float> positions = {-x, -y, -z,
-                                    x, -y, -z,
-                                    x, y, -z,
-                                    -x, y, -z,
+    std::vector<float> positions = {-x, -y, 0.0f,
+                                    x, -y, 0.0f,
+                                    x, y, 0.0f,
+                                    -x, y, 0.0f,
 
-                                    -x, -y, z,
-                                    x, -y, z,
-                                    x, y, z,
-                                    -x, y, z};
+                                    -x, -y, z*2.0f,
+                                    x, -y, z*2.0f,
+                                    x, y, z*2.0f,
+                                    -x, y, z*2.0f};
     std::vector<unsigned int> indices = {0, 1, 1, 2, 2, 3, 3, 0,
                                         4, 5, 5, 6, 6, 7, 7, 4,
                                         0, 4, 1, 5, 2, 6, 3, 7};

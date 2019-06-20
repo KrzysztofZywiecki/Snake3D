@@ -17,12 +17,13 @@
 	<inttypes.h>
 	<stdint.h>
 
-1561017014 source:c:\users\krzys\desktop\projects\snake\main.cpp
+1561018931 source:c:\users\krzys\desktop\projects\snake\main.cpp
 	<iostream>
 	"Graphics.h"
 	"Loader.h"
 	"Model.h"
 	"BasicShader.h"
+	"Snake.h"
 
 1559916924 c:\users\krzys\desktop\projects\snake\glm\glm\glm.hpp
 	"detail/_fixes.hpp"
@@ -688,13 +689,13 @@
 1561016126 c:\users\krzys\desktop\projects\snake\include\model.h
 	<glad/glad.h>
 
-1561016738 c:\users\krzys\desktop\projects\snake\include\loader.h
+1561018556 c:\users\krzys\desktop\projects\snake\include\loader.h
 	<list>
 	<vector>
 	"Graphics.h"
 	"Model.h"
 
-1561016747 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
+1561018972 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
 	"Loader.h"
 
 1560171589 c:\users\krzys\desktop\projects\snake\include\graphics.h
@@ -970,4 +971,13 @@
 
 1561016940 c:\users\krzys\desktop\projects\snake\include\basicshader.h
 	"Shader.h"
+
+1561019110 source:c:\users\krzys\desktop\projects\snake\src\snake.cpp
+	"Snake.h"
+
+1561020877 c:\users\krzys\desktop\projects\snake\include\snake.h
+	<vector>
+	"Loader.h"
+	"Model.h"
+	"Graphics.h"
 
