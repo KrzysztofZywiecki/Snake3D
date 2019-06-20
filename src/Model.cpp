@@ -23,3 +23,9 @@ const unsigned int Model::GetVertexCount() const
 {
     return vertexCount;
 }
+
+void Model::Bind() const
+{
+    glBindVertexArray(vao);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+}

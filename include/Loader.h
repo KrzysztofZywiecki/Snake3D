@@ -12,10 +12,13 @@ public:
 
     static unsigned int CreateVAO();
     static unsigned int CreateEBO(std::vector<unsigned int> indices);
-    static void StoreDataInAttributeList(unsigned int attribute, std::vector<float> data);
+    static void StoreDataInAttributeList(unsigned int attribute, unsigned int size, std::vector<float> data);
     static Model LoadToVAO(std::vector<float> positions, std::vector<unsigned int> indices);
-    static void UnbindVAO();
+    static Model GenerateGrid(unsigned int x, unsigned int y);
+
+    static Model GenerateWireCube(float x, float y, float z);
 private:
+    static void UnbindVAO();
     static std::list<unsigned int> vaos;
     static std::list<unsigned int> vbos;
 };

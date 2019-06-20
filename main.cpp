@@ -27,10 +27,22 @@ int main()
     BasicShader shader("Shaders/basicVertex.txt", "Shaders/basicFragment.txt");
     shader.Use();
     shader.SetCamera();
+    shader.SetColor(1.0f, 1.0f, 1.0f);
+
+    Model grid = Loader::GenerateGrid(8, 8);
+    Model cube = Loader::GenerateWireCube(1.0f, 1.0f, 1.0f);
+
     while(!Graphics::WindowShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT);
-        glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
+        //glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
+        grid.Bind();
+        shader.SetColor(1.0f, 0.0f, 0.0f);
+        glDrawElements(GL_LINES, grid.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
+        cube.Bind();
+        shader.SetColor(0.0f, 1.0f, 0.0f);
+        glDrawElements(GL_LINES, cube.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
+
 
         Graphics::UpdateDisplay();
     }

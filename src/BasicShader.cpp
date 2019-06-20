@@ -3,11 +3,17 @@
 void BasicShader::GetUniforms()
 {
     cameraLocation = glGetUniformLocation(shaderID, "camera");
+    colorLocation = glGetUniformLocation(shaderID, "u_color");
 }
 
 void BasicShader::SetCamera()
 {
     glUniformMatrix4fv(cameraLocation, 1, false, glm::value_ptr(Graphics::GetCamera()));
+}
+
+void BasicShader::SetColor(float r, float g, float b)
+{
+    glUniform3f(colorLocation, r, g, b);
 }
 
 BasicShader::BasicShader(const char* vertex, const char* fragment)
