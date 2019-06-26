@@ -44,9 +44,11 @@ int main()
         shader.SetColor(0.0f, 1.0f, 0.0f);
         glDrawElements(GL_LINES, cube.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
 
+        snake.Update(Graphics::GetFrameTime());
         snake.Draw();
 
         Graphics::UpdateDisplay();
+        Sleep(10);
     }
 
     return 0;

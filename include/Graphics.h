@@ -4,6 +4,7 @@
 #include <glad/glad.h>
 #include <glfw/glfw3.h>
 #include <stdexcept>
+#include <chrono>
 
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
@@ -19,7 +20,11 @@ public:
     static bool WindowShouldClose();
     static void UpdateDisplay();
     static glm::mat4 GetCamera();
+    static float GetFrameTime();
+    static GLFWwindow* GetWindowPtr();
 private:
+    static float time;
+    static std::chrono::time_point<std::chrono::steady_clock> previous;
     static glm::mat4 camera;
     static GLFWwindow* window;
     static unsigned int width;
