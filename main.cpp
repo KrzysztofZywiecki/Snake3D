@@ -32,7 +32,7 @@ int main()
 
     Model grid = Loader::GenerateGrid(9, 9);
     Model cube = Loader::GenerateWireCube(1.0f, 1.0f, 1.0f);
-    Snake snake(8, 8);
+    Snake snake(9, 9);
     while(!Graphics::WindowShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT);
