@@ -1,9 +1,11 @@
 #include "Snake.h"
 
-Snake::Snake(unsigned int grid_x, unsigned int grid_y)
+Snake::Snake(unsigned int grid_x, unsigned int grid_y, BasicShader shader)
     :x(2.0f/(float)(grid_x)), y(2.0f/(float)(grid_y)),
     grid_x(grid_x), grid_y(grid_y), direction(Direction::RIGHT), selected(Direction::RIGHT),
-     globalCube(Loader::GenerateWireCube(1.0f/(float)grid_x, 1.0f/(float)grid_y, 1.0f/(float)grid_y))
+     globalCube(Loader::GenerateWireCube(1.0f/(float)grid_x, 1.0f/(float)grid_y, 1.0f/(float)grid_y)),
+     globalRectangle(Loader::GenerateRectangle(1.0f/(float)grid_x, 1.0f/(float)grid_y)), shader(shader),
+     ant(grid_x, grid_y, globalCube, globalRectangle, shader)
 {
     occupied = new bool[grid_x * grid_y];
     memset(occupied, 0, grid_x * grid_y);
@@ -14,11 +16,15 @@ Snake::Snake(unsigned int grid_x, unsigned int grid_y)
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 2, GL_FLOAT, false, 2*sizeof(float), (void*)(0));
     glVertexAttribDivisor(1, 1);
+
+    glBindVertexArray(globalRectangle.GetVAO());
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, false, 2*sizeof(float), (void*)(0));
+    glVertexAttribDivisor(1, 1);
+    ant.ResetPosition(occupied);
     InsertInstance(0, 0);
     InsertInstance(-1, 0);
     InsertInstance(-2, 0);
-    InsertInstance(-3, 0);
-    InsertInstance(-3, 1);
 }
 
 void Snake::InsertInstance(int x, int y)
@@ -33,9 +39,17 @@ void Snake::InsertInstance(int x, int y)
 
 void Snake::Draw()
 {
+    shader.Use();
+    globalRectangle.Bind();
+    shader.SetColor(1.0f, 1.0f, 0.0f);
+    glDrawElementsInstanced(GL_TRIANGLES, globalRectangle.GetVertexCount(),
+    GL_UNSIGNED_INT, nullptr, segments.size()/2);
+
     globalCube.Bind();
+    shader.SetColor(0.0f, 1.0f, 0.0f);
     glDrawElementsInstanced(GL_LINES, globalCube.GetVertexCount(),
     GL_UNSIGNED_INT, nullptr, segments.size()/2);
+    ant.Draw();
 }
 
 void Snake::Update(float time)

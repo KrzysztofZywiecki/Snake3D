@@ -32,9 +32,10 @@ int main()
 
     Model grid = Loader::GenerateGrid(9, 9);
     Model cube = Loader::GenerateWireCube(1.0f, 1.0f, 1.0f);
-    Snake snake(9, 9);
+    Snake snake(9, 9, shader);
     while(!Graphics::WindowShouldClose())
     {
+        shader.Use();
         glClear(GL_COLOR_BUFFER_BIT);
         //glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
         grid.Bind();

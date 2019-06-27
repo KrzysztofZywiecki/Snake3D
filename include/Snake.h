@@ -4,6 +4,8 @@
 #include "Loader.h"
 #include "Model.h"
 #include "Graphics.h"
+#include "BasicShader.h"
+#include "Ant.h"
 
 enum Direction
 { UP, DOWN, LEFT, RIGHT };
@@ -11,7 +13,7 @@ enum Direction
 class Snake
 {
 public:
-    Snake(unsigned int grid_x, unsigned int grid_y);
+    Snake(unsigned int grid_x, unsigned int grid_y, BasicShader shader);
     virtual ~Snake();
 
     void SwitchDirection(Direction direction);
@@ -34,7 +36,10 @@ private:
     bool* occupied;
     void InsertInstance(int x, int y);
     Model globalCube;
+    Model globalRectangle;
+    Ant ant;
 
+    BasicShader shader;
     bool& Access(int x, int y);
     void GetKeys();
     void UpdateInstances();
