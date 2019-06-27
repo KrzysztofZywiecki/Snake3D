@@ -43,6 +43,7 @@ void Graphics::InitWindow(unsigned int width, unsigned int height, const char* t
     gladLoadGLLoader((GLADloadproc)(glfwGetProcAddress));
     glEnable(GL_DEBUG_OUTPUT);
     glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+    glEnable(GL_DEPTH_TEST);
     glDebugMessageCallback((GLDEBUGPROC)(callback), nullptr);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 

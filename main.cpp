@@ -35,8 +35,8 @@ int main()
     Snake snake(9, 9, shader);
     while(!Graphics::WindowShouldClose())
     {
-        shader.Use();
         glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_DEPTH_BUFFER_BIT);
         //glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
         grid.Bind();
         shader.SetColor(1.0f, 0.0f, 0.0f);

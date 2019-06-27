@@ -45,6 +45,7 @@ void Snake::Draw()
     glDrawElementsInstanced(GL_TRIANGLES, globalRectangle.GetVertexCount(),
     GL_UNSIGNED_INT, nullptr, segments.size()/2);
 
+    shader.Use();
     globalCube.Bind();
     shader.SetColor(0.0f, 1.0f, 0.0f);
     glDrawElementsInstanced(GL_LINES, globalCube.GetVertexCount(),
@@ -61,7 +62,11 @@ void Snake::Update(float time)
         direction = selected;
         MoveTail();
         MoveHead();
-
+        if(ant.Collision(segmentCoords[0], segmentCoords[1]))
+        {
+            InsertInstance(segmentCoords[segmentCoords.size()-2]-grid_x/2, segmentCoords[segmentCoords.size()-1]-grid_y/2);
+            ant.ResetPosition(occupied);
+        }
         timer -= difficulty;
     }
 }

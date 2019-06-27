@@ -29,7 +29,8 @@ void Ant::ResetPosition(bool* occupied)
         pos = rand()%(grid_x*grid_y);
     }while(occupied[pos]);
     unsigned int x = pos/grid_y;
-
+    pos_x = x;
+    pos_y = pos%grid_y;
     translation[0] = -1.0f+this->x/2.0f + (float)(x)*this->x;
     translation[1] = -1.0f+this->y/2.0f + (float)(pos%grid_y)*this->y;
     SetData();
@@ -53,6 +54,11 @@ void Ant::Draw()
     globalCube.Bind();
     glDrawElementsInstanced(GL_LINES, globalCube.GetVertexCount(),
     GL_UNSIGNED_INT, nullptr, 1);
+}
+
+bool Ant::Collision(unsigned int x, unsigned int y)
+{
+    return (x == this->pos_x) && (y == this->pos_y);
 }
 
 Ant::~Ant()
