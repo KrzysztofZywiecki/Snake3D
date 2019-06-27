@@ -30,10 +30,12 @@ private:
     Direction selected;
     float timer = 0.0f;
     std::vector<float> segments;
+    std::vector<unsigned int> segmentCoords;
     bool* occupied;
     void InsertInstance(int x, int y);
     Model globalCube;
 
+    bool& Access(int x, int y);
     void GetKeys();
     void UpdateInstances();
     void MoveTail();
