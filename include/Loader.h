@@ -17,6 +17,7 @@ public:
     static void UpdateBufferData(std::vector<float> data);
 
     static Model LoadToVAO(std::vector<float> positions, std::vector<unsigned int> indices);
+    static Model GenerateRectangle(float x, float y);
     static Model GenerateGrid(unsigned int x, unsigned int y);
     static Model GenerateWireCube(float x, float y, float z);
 private:

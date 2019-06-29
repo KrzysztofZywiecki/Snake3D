@@ -5,7 +5,10 @@ layout(location = 1) in vec2 translation;
 
 uniform mat4 camera;
 
+out float instance;
+
 void main()
 {
+    instance = gl_InstanceID;
     gl_Position = camera * vec4(position + vec3(translation, 0.0f), 1.0f);
 }

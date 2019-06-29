@@ -1,5 +1,7 @@
 #include "Graphics.h"
 
+std::chrono::time_point<std::chrono::steady_clock> Graphics::previous;
+float Graphics::time = 0.0f;
 GLFWwindow* Graphics::window;
 glm::mat4 Graphics::camera;
 unsigned int Graphics::height;
@@ -41,6 +43,7 @@ void Graphics::InitWindow(unsigned int width, unsigned int height, const char* t
     gladLoadGLLoader((GLADloadproc)(glfwGetProcAddress));
     glEnable(GL_DEBUG_OUTPUT);
     glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
+    glEnable(GL_DEPTH_TEST);
     glDebugMessageCallback((GLDEBUGPROC)(callback), nullptr);
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
@@ -51,6 +54,7 @@ void Graphics::InitWindow(unsigned int width, unsigned int height, const char* t
 	camera = glm::perspective(glm::radians(90.0f), (float)(width) / (float)(height), 0.1f, 10.0f) *
 		glm::lookAt(position, direction, up);
 
+    previous = std::chrono::steady_clock::now();
 }
 
 bool Graphics::WindowShouldClose()
@@ -62,4 +66,17 @@ void Graphics::UpdateDisplay()
 {
     glfwSwapBuffers(window);
     glfwPollEvents();
+    auto newTime = std::chrono::steady_clock::now();
+    time = std::chrono::duration_cast<std::chrono::milliseconds>(newTime - previous).count();
+    previous = newTime;
+}
+
+float Graphics::GetFrameTime()
+{
+    return time;
+}
+
+GLFWwindow* Graphics::GetWindowPtr()
+{
+    return window;
 }

@@ -106,6 +106,16 @@ Model Loader::GenerateWireCube(float x, float y, float z)
     return LoadToVAO(positions, indices);
 }
 
+Model Loader::GenerateRectangle(float x, float y)
+{
+    std::vector<float> positions = {-x, -y, 0.0f,
+                                    x, -y, 0.0f,
+                                    x, y, 0.0f,
+                                    -x, y, 0.0f};
+    std::vector<unsigned int> indices = {0, 1, 2, 0, 2, 3};
+    return LoadToVAO(positions, indices);
+}
+
 void Loader::UnbindVAO()
 {
     glBindVertexArray(0);

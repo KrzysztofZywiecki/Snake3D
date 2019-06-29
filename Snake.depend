@@ -17,7 +17,7 @@
 	<inttypes.h>
 	<stdint.h>
 
-1561018931 source:c:\users\krzys\desktop\projects\snake\main.cpp
+1561632536 source:c:\users\krzys\desktop\projects\snake\main.cpp
 	<iostream>
 	"Graphics.h"
 	"Loader.h"
@@ -689,27 +689,28 @@
 1561016126 c:\users\krzys\desktop\projects\snake\include\model.h
 	<glad/glad.h>
 
-1561018556 c:\users\krzys\desktop\projects\snake\include\loader.h
+1561618253 c:\users\krzys\desktop\projects\snake\include\loader.h
 	<list>
 	<vector>
 	"Graphics.h"
 	"Model.h"
 
-1561018972 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
+1561618253 source:c:\users\krzys\desktop\projects\snake\src\loader.cpp
 	"Loader.h"
 
-1560171589 c:\users\krzys\desktop\projects\snake\include\graphics.h
+1561577961 c:\users\krzys\desktop\projects\snake\include\graphics.h
 	<iostream>
 	<glad/glad.h>
 	<glfw/glfw3.h>
 	<stdexcept>
+	<chrono>
 	<glm/vec3.hpp>
 	<glm/vec4.hpp>
 	<glm/mat4x4.hpp>
 	<glm/gtc/type_ptr.hpp>
 	<glm/gtc/matrix_transform.hpp>
 
-1560880840 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
+1561627186 source:c:\users\krzys\desktop\projects\snake\src\graphics.cpp
 	"Graphics.h"
 
 1559916928 c:\users\krzys\desktop\projects\snake\glm\glm\gtc\type_ptr.hpp
@@ -966,18 +967,29 @@
 	<memory>
 	<fstream>
 
-1561017034 source:c:\users\krzys\desktop\projects\snake\src\basicshader.cpp
+1561630421 source:c:\users\krzys\desktop\projects\snake\src\basicshader.cpp
 	"BasicShader.h"
 
 1561016940 c:\users\krzys\desktop\projects\snake\include\basicshader.h
 	"Shader.h"
 
-1561570935 source:c:\users\krzys\desktop\projects\snake\src\snake.cpp
+1561632528 source:c:\users\krzys\desktop\projects\snake\src\snake.cpp
 	"Snake.h"
 
-1561020877 c:\users\krzys\desktop\projects\snake\include\snake.h
+1561632528 c:\users\krzys\desktop\projects\snake\include\snake.h
 	<vector>
 	"Loader.h"
 	"Model.h"
 	"Graphics.h"
+	"BasicShader.h"
+	"Ant.h"
+
+1561627978 source:c:\users\krzys\desktop\projects\snake\src\ant.cpp
+	"Ant.h"
+
+1561620039 c:\users\krzys\desktop\projects\snake\include\ant.h
+	<cstdlib>
+	"Graphics.h"
+	"Loader.h"
+	"BasicShader.h"
 

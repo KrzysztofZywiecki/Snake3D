@@ -32,10 +32,11 @@ int main()
 
     Model grid = Loader::GenerateGrid(9, 9);
     Model cube = Loader::GenerateWireCube(1.0f, 1.0f, 1.0f);
-    Snake snake(9, 9);
+    Snake snake(9, 9, shader);
     while(!Graphics::WindowShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_DEPTH_BUFFER_BIT);
         //glDrawElements(GL_TRIANGLES, rect.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
         grid.Bind();
         shader.SetColor(1.0f, 0.0f, 0.0f);
@@ -44,9 +45,11 @@ int main()
         shader.SetColor(0.0f, 1.0f, 0.0f);
         glDrawElements(GL_LINES, cube.GetVertexCount(), GL_UNSIGNED_INT, nullptr);
 
+        snake.Update(Graphics::GetFrameTime());
         snake.Draw();
 
         Graphics::UpdateDisplay();
+        Sleep(10);
     }
 
     return 0;
